@@ -1,6 +1,7 @@
 import React from 'react'
-import { LayoutDashboard, FileText, Layers, Settings } from 'lucide-react'
+import { LayoutDashboard, FileText, Layers, Settings, LogOut } from 'lucide-react'
 import Link from 'next/link'
+import { signout } from '@/app/login/actions'
 
 export function Sidebar({ active }: { active: string }) {
   const items = [
@@ -34,14 +35,13 @@ export function Sidebar({ active }: { active: string }) {
           </Link>
         ))}
       </nav>
-      {/* We can dynamically inject user info here later */}
       <div className="hidden md:block p-3 border-t border-border">
-        <div className="flex items-center gap-2.5 px-3 py-2">
-          <div className="w-7 h-7 rounded-full bg-primary/20 flex items-center justify-center text-primary text-xs font-semibold">U</div>
-          <div className="min-w-0">
-            <p className="text-xs font-medium truncate">My Account</p>
-          </div>
-        </div>
+        <form action={signout}>
+          <button type="submit" className="w-full flex items-center gap-2.5 px-3 py-2 text-sidebar-foreground hover:bg-sidebar-accent hover:text-foreground rounded-[6px] transition-colors text-left text-sm cursor-pointer">
+            <LogOut size={15} />
+            <span className="font-medium">Sign out</span>
+          </button>
+        </form>
       </div>
     </aside>
   );

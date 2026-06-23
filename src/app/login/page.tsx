@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
-import { Layers, ArrowRight, Star } from 'lucide-react'
+import { Layers, ArrowRight, Star, ArrowLeft } from 'lucide-react'
 import { Btn } from '@/components/ui/original/Btn'
 import { Input } from '@/components/ui/original/Input'
 import { login } from './actions'
@@ -61,8 +61,11 @@ export default function LoginPage() {
       </div>
 
       {/* Right pane */}
-      <div className="flex-1 flex items-center justify-center p-8">
-        <div className="w-full max-w-sm">
+      <div className="flex-1 flex flex-col items-center justify-center p-8 relative">
+        <Link href="/" className="absolute top-8 left-8 flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
+          <ArrowLeft size={14} /> Back to home
+        </Link>
+        <div className="w-full max-w-sm mt-8 lg:mt-0">
           <Link href="/" className="lg:hidden flex items-center gap-2 mb-8">
             <div className="w-6 h-6 rounded-md bg-primary flex items-center justify-center">
               <Layers size={13} className="text-white" />

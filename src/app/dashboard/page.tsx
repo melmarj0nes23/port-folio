@@ -47,11 +47,9 @@ export default async function DashboardPage() {
             <Link href={`/${profile?.username}`} target="_blank" className="flex items-center gap-1.5 text-xs text-muted-foreground hover:text-foreground transition-colors">
               <Globe size={13} /> View public profile
             </Link>
-            <form action={createPortfolio}>
-              <Btn type="submit" variant="primary" size="sm">
-                <Plus size={13} /> New portfolio
-              </Btn>
-            </form>
+            <Link href="/templates" className="inline-flex items-center justify-center gap-2 font-medium transition-all duration-150 cursor-pointer select-none bg-primary text-primary-foreground md:hover:opacity-90 active:scale-[0.98] px-3 py-1.5 text-sm rounded-[6px]">
+              <Plus size={13} /> New portfolio
+            </Link>
           </div>
         </header>
 
