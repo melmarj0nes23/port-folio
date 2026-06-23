@@ -176,7 +176,7 @@ export function TemplatesClient({ isLoggedIn }: { isLoggedIn: boolean }) {
                     <Badge variant="muted">{t.category}</Badge>
                   </div>
                   <p className="text-xs text-muted-foreground leading-relaxed">{t.desc}</p>
-                  <div className="mt-3 flex gap-2 relative z-50 pointer-events-auto">
+                  <div className="mt-3 flex gap-2">
                     <Btn 
                       variant={selected === t.name ? "primary" : "outline"} 
                       size="sm" 
