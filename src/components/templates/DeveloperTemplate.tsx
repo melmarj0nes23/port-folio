@@ -643,9 +643,12 @@ export function DeveloperTemplate({ portfolio, profile, setProfile, projects, se
         </main>
 
         <footer className="py-12 border-t border-zinc-800/50 flex flex-col md:flex-row items-center justify-between gap-4 text-xs font-mono text-zinc-600">
-          <span>{new Date().getFullYear()} © <EditableField value={profile?.full_name || "Alex Chen"} onChange={(val: string) => setProfile?.({...profile, full_name: val})} isEditor={isEditor} /></span>
-          <div className="flex gap-4">
-            <span className="flex items-center gap-1"><span className="w-2 h-2 rounded-full bg-green-500"></span> All systems operational</span>
+          <span className="text-zinc-300">
+            <EditableField value={profile?.full_name || "Alex Chen"} onChange={(val: string) => setProfile?.({...profile, full_name: val})} isEditor={isEditor} />
+          </span>
+          <div className="flex items-center gap-4">
+            <span className="hidden md:flex items-center gap-1"><span className="w-2 h-2 rounded-full bg-green-500"></span> All systems operational</span>
+            <span>© {new Date().getFullYear()}</span>
           </div>
         </footer>
 

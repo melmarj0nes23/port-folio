@@ -457,12 +457,13 @@ export function ProfessionalTemplate({ portfolio, profile, setProfile, projects,
 
       <footer className="bg-slate-50 py-12 border-t border-slate-200 text-slate-500">
         <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-sm font-medium">
-            © {new Date().getFullYear()} <EditableField value={profile?.full_name || "Alex Chen"} onChange={(val: string) => setProfile?.({...profile, full_name: val})} isEditor={isEditor} />
+          <p className="text-sm font-medium text-slate-900">
+            <EditableField value={profile?.full_name || "Alex Chen"} onChange={(val: string) => setProfile?.({...profile, full_name: val})} isEditor={isEditor} />
           </p>
-          <div className="flex gap-6 text-sm font-semibold">
-            <a href="#work" className="hover:text-slate-900 transition-colors">Case Studies</a>
-            <a href="#contact" className="hover:text-slate-900 transition-colors">Contact</a>
+          <div className="flex items-center gap-6 text-sm font-semibold">
+            <a href="#work" className="hidden md:block hover:text-slate-900 transition-colors">Case Studies</a>
+            <a href="#contact" className="hidden md:block hover:text-slate-900 transition-colors">Contact</a>
+            <span>© {new Date().getFullYear()}</span>
           </div>
         </div>
       </footer>

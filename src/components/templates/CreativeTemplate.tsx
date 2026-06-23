@@ -753,7 +753,10 @@ export function CreativeTemplate({ portfolio, profile, setProfile, projects, set
         )}
       </main>
       
-      <footer className="bg-black text-slate-600 py-12 px-8 md:px-16 flex justify-between items-center font-bold tracking-widest uppercase text-sm border-t border-slate-900">
+      <footer className="bg-black text-slate-600 py-12 px-8 md:px-16 flex flex-col md:flex-row justify-between items-center gap-4 font-bold tracking-widest uppercase text-sm border-t border-slate-900">
+        <div className="text-white">
+          <EditableField value={profile?.full_name || "ALEX CHEN"} onChange={(val: string) => setProfile?.({...profile, full_name: val})} isEditor={isEditor} />
+        </div>
         <div>© {new Date().getFullYear()}</div>
       </footer>
     </div>

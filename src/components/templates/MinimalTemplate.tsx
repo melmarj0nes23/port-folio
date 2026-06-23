@@ -410,8 +410,11 @@ export function MinimalTemplate({ portfolio, profile, setProfile, projects, setP
 
       <footer className="py-12 border-t border-gray-100 mt-24">
         <div className="max-w-5xl mx-auto px-8 md:px-16 flex flex-col md:flex-row justify-between items-center gap-6">
+          <p className="text-sm font-medium text-gray-900">
+            <EditableField value={profile?.full_name || "Alex Chen"} onChange={(val: string) => setProfile?.({...profile, full_name: val})} isEditor={isEditor} />
+          </p>
           <p className="text-sm font-light text-gray-500">
-            © {new Date().getFullYear()} <EditableField value={profile?.full_name || "Alex Chen"} onChange={(val: string) => setProfile?.({...profile, full_name: val})} isEditor={isEditor} />
+            © {new Date().getFullYear()}
           </p>
         </div>
       </footer>

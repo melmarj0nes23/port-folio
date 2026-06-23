@@ -589,8 +589,11 @@ export function ExecutiveTemplate({ portfolio, profile, setProfile, projects, se
 
       <footer className="bg-slate-900 text-slate-400 py-12 px-8 lg:px-24">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-sm font-medium text-white">
+            <EditableField value={profile?.full_name || "Alexandra Chen"} onChange={(val: string) => setProfile?.({...profile, full_name: val})} isEditor={isEditor} />
+          </p>
           <p className="text-sm">
-            © {new Date().getFullYear()} <EditableField value={profile?.full_name || "Alexandra Chen"} onChange={(val: string) => setProfile?.({...profile, full_name: val})} isEditor={isEditor} />
+            © {new Date().getFullYear()}
           </p>
         </div>
       </footer>
