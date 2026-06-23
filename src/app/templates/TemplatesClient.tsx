@@ -188,15 +188,6 @@ export function TemplatesClient({ isLoggedIn }: { isLoggedIn: boolean }) {
                           handleCreate();
                         }
                       }}
-                      onTouchEnd={(e) => {
-                        e.preventDefault();
-                        e.stopPropagation();
-                        if (selected !== t.name) {
-                          setSelected(t.name);
-                        } else {
-                          handleCreate();
-                        }
-                      }}
                       disabled={selected === t.name && isCreating}
                     >
                       {selected === t.name && isCreating ? "Creating..." : selected === t.name ? "Use this template" : "Select"}
