@@ -5,6 +5,42 @@ import { DeveloperTemplate } from '@/components/templates/DeveloperTemplate'
 import { CreativeTemplate } from '@/components/templates/CreativeTemplate'
 import { ProfessionalTemplate } from '@/components/templates/ProfessionalTemplate'
 import { ExecutiveTemplate } from '@/components/templates/ExecutiveTemplate'
+import type { Metadata } from 'next'
+
+export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
+  const { id } = await params
+  const supabase = await createClient()
+
+  const isUuid = /^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$/.test(id)
+  
+  let query = supabase.from('portfolios').select('user_id')
+  if (isUuid) {
+    query = query.eq('id', id)
+  } else {
+    query = query.eq('slug', id)
+  }
+  
+  const { data: portfolio } = await query.single()
+  
+  if (portfolio?.user_id) {
+    const { data: profile } = await supabase
+      .from('users_profile')
+      .select('full_name')
+      .eq('user_id', portfolio.user_id)
+      .single()
+      
+    if (profile?.full_name) {
+      return {
+        title: `${profile.full_name}`,
+        description: `View ${profile.full_name}'s professional portfolio.`
+      }
+    }
+  }
+
+  return {
+    title: 'Portfolio'
+  }
+}
 
 export default async function PublicPortfolioPage({ params }: { params: { id: string } }) {
   const { id } = await params
