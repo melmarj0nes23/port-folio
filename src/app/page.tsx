@@ -73,10 +73,15 @@ export default function LandingPage() {
           <p className="text-lg text-muted-foreground leading-relaxed mb-8 max-w-xl">
             A structured editor, live preview, and one-click publishing. Designed for developers, designers, and professionals who want a great portfolio without the overhead.
           </p>
-          <div className="flex items-center gap-3">
+          <div className="flex flex-col sm:flex-row items-center gap-4">
             <Link href="/signup">
-              <Btn variant="primary" size="lg">
-                Start for free <ArrowRight size={15} />
+              <Btn variant="primary" size="lg" className="w-full sm:w-auto h-12 px-8">
+                Start Building <ArrowRight size={16} />
+              </Btn>
+            </Link>
+            <Link href="/demo">
+              <Btn variant="secondary" size="lg" className="w-full sm:w-auto h-12 px-8">
+                Try the Demo
               </Btn>
             </Link>
           </div>

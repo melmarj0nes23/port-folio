@@ -17,7 +17,8 @@ export default function EditorClient({
   initialGalleries,
   initialPages,
   initialBlocks,
-  username 
+  username,
+  isDemo = false
 }: any) {
   const router = useRouter()
 
@@ -37,7 +38,9 @@ export default function EditorClient({
     const timer = setTimeout(async () => {
       setIsSaving(true)
       try {
-        await savePortfolioData({ portfolio, profile, projects, experience, galleries, pages, blocks })
+        if (!isDemo) {
+          await savePortfolioData({ portfolio, profile, projects, experience, galleries, pages, blocks })
+        }
       } catch (err) {
         console.error('Error auto-saving:', err)
       } finally {
@@ -45,13 +48,21 @@ export default function EditorClient({
       }
     }, 1500)
     return () => clearTimeout(timer)
-  }, [portfolio, profile, projects, experience, galleries, pages, blocks])
+  }, [portfolio, profile, projects, experience, galleries, pages, blocks, isDemo])
 
   const handlePublish = async () => {
+    if (isDemo) {
+      alert("You're in demo mode! Create an account to publish your live portfolio.")
+      return
+    }
     setPortfolio({ ...portfolio, is_published: !portfolio.is_published })
   }
 
   const handleExit = async () => {
+    if (isDemo) {
+      router.push("/")
+      return
+    }
     setIsSaving(true)
     try {
       await savePortfolioData({ portfolio, profile, projects, experience, galleries, pages, blocks })
@@ -63,6 +74,10 @@ export default function EditorClient({
 
   const handleViewLive = (e: any) => {
     e.preventDefault()
+    if (isDemo) {
+      alert("You're in demo mode! Create an account to publish your live portfolio.")
+      return
+    }
     // Open synchronously to avoid mobile Safari popup blocker
     const targetUrl = `/p/${portfolio?.slug || portfolio?.id}`;
     const newWindow = window.open(targetUrl, '_blank');
