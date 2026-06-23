@@ -66,7 +66,7 @@ export function DeveloperTemplate({ portfolio, profile, setProfile, projects, se
             >
               <div className="inline-flex items-center gap-2 px-3 py-1 bg-zinc-900 border border-zinc-800 rounded-full mb-8 text-xs font-mono text-zinc-400">
                 <span className="w-2 h-2 rounded-full animate-pulse shadow-[0_0_10px_currentColor]" style={{ backgroundColor: accentColor }}></span>
-                System Status: <EditableField value={block.content?.status || "Online & Deploying"} onChange={(val: string) => {
+                <EditableField value={block.content?.status || "Online & Deploying"} onChange={(val: string) => {
                   if(isEditor && setBlocks) {
                     setBlocks(activeBlocks.map((b: any, i: number) => i === index ? { ...b, content: { ...b.content, status: val } } : b));
                   }
