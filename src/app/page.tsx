@@ -66,10 +66,7 @@ export default function LandingPage() {
       {/* Hero */}
       <section className="max-w-6xl mx-auto px-6 pt-24 pb-20">
         <div className="max-w-2xl">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-border bg-card text-xs text-muted-foreground mb-8">
-            <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
-            Now live — publish your portfolio in under 5 minutes
-          </div>
+
           <h1 className="text-5xl font-bold leading-[1.1] tracking-tight mb-5">
             Build and publish your<br />portfolio in minutes
           </h1>
