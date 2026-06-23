@@ -38,7 +38,7 @@ export default function LoginPage() {
           <div className="w-6 h-6 rounded-md bg-primary flex items-center justify-center">
             <Layers size={13} className="text-white" />
           </div>
-          <span className="text-sm font-semibold">Portfoilo</span>
+          <span className="text-sm font-semibold">Melmar's Portfolio Maker</span>
         </Link>
         <div className="py-16">
           <blockquote className="text-xl font-medium leading-relaxed mb-6">
@@ -67,13 +67,13 @@ export default function LoginPage() {
             <div className="w-6 h-6 rounded-md bg-primary flex items-center justify-center">
               <Layers size={13} className="text-white" />
             </div>
-            <span className="text-sm font-semibold">Portfoilo</span>
+            <span className="text-sm font-semibold">Melmar's Portfolio Maker</span>
           </Link>
           <h1 className="text-2xl font-bold tracking-tight mb-1">
             Welcome back
           </h1>
           <p className="text-sm text-muted-foreground mb-8">
-            Sign in to continue to Portfoilo.
+            Sign in to continue to Melmar's Portfolio Maker.
           </p>
 
           {error && <div className="text-red-500 text-sm mb-4">{error}</div>}

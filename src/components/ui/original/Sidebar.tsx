@@ -17,7 +17,7 @@ export function Sidebar({ active }: { active: string }) {
           <div className="w-6 h-6 rounded-md bg-primary flex items-center justify-center">
             <Layers size={13} className="text-white" />
           </div>
-          <span className="text-sm font-semibold">Portfoilo</span>
+          <span className="text-sm font-semibold">Melmar's Portfolio Maker</span>
         </Link>
       </div>
       <nav className="flex-1 p-2 md:p-3 flex md:flex-col justify-around md:justify-start gap-1 md:gap-0.5">

@@ -106,7 +106,7 @@ export function TemplatesClient({ isLoggedIn }: { isLoggedIn: boolean }) {
               <div className="w-6 h-6 rounded-md bg-primary flex items-center justify-center">
                 <Layers size={13} className="text-white" />
               </div>
-              <span className="text-sm font-semibold tracking-tight">Portfoilo</span>
+              <span className="text-sm font-semibold tracking-tight">Melmar's Portfolio Maker</span>
             </Link>
             <div className="flex items-center gap-2">
               <Link href="/login"><Btn variant="ghost" size="sm">Sign in</Btn></Link>

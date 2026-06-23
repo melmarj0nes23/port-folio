@@ -15,7 +15,7 @@ export default function PrivacyPage() {
             <div className="w-5 h-5 rounded bg-primary flex items-center justify-center">
               <Layers size={11} className="text-white" />
             </div>
-            <span className="text-sm font-semibold tracking-tight">Portfoilo Maker</span>
+            <span className="text-sm font-semibold tracking-tight">Melmar's Portfolio Maker</span>
           </div>
         </div>
       </header>
@@ -28,7 +28,7 @@ export default function PrivacyPage() {
 
           <h2 className="text-xl font-semibold text-foreground mt-8 mb-4">1. Information We Collect</h2>
           <p>
-            When you use Portfoilo Maker, we may collect the personal information you voluntarily provide such as your name, email address, professional history, and other details necessary to generate your portfolio.
+            When you use Melmar's Portfolio Maker, we may collect the personal information you voluntarily provide such as your name, email address, professional history, and other details necessary to generate your portfolio.
           </p>
 
           <h2 className="text-xl font-semibold text-foreground mt-8 mb-4">2. How We Use Your Information</h2>

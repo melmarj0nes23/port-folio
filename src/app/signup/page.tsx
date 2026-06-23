@@ -38,7 +38,7 @@ export default function SignupPage() {
           <div className="w-6 h-6 rounded-md bg-primary flex items-center justify-center">
             <Layers size={13} className="text-white" />
           </div>
-          <span className="text-sm font-semibold">Portfoilo</span>
+          <span className="text-sm font-semibold">Melmar's Portfolio Maker</span>
         </Link>
         <div className="py-16">
           <blockquote className="text-xl font-medium leading-relaxed mb-6">
@@ -67,7 +67,7 @@ export default function SignupPage() {
             <div className="w-6 h-6 rounded-md bg-primary flex items-center justify-center">
               <Layers size={13} className="text-white" />
             </div>
-            <span className="text-sm font-semibold">Portfoilo</span>
+            <span className="text-sm font-semibold">Melmar's Portfolio Maker</span>
           </Link>
           <h1 className="text-2xl font-bold tracking-tight mb-1">
             Create your account

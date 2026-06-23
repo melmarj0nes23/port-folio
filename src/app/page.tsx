@@ -50,7 +50,7 @@ export default function LandingPage() {
             <div className="w-6 h-6 rounded-md bg-primary flex items-center justify-center">
               <Layers size={13} className="text-white" />
             </div>
-            <span className="text-sm font-semibold tracking-tight">Portfoilo</span>
+            <span className="text-sm font-semibold tracking-tight">Melmar's Portfolio Maker</span>
           </Link>
           <nav className="hidden md:flex items-center gap-6">
             <a href="#features" className="text-sm text-muted-foreground hover:text-foreground transition-colors cursor-pointer">Features</a>
@@ -110,7 +110,7 @@ export default function LandingPage() {
                 <div className="w-5 h-5 rounded bg-primary flex items-center justify-center">
                   <Layers size={11} className="text-white" />
                 </div>
-                <span className="text-xs font-semibold">Portfoilo</span>
+                <span className="text-xs font-semibold">Melmar's Portfolio Maker</span>
               </div>
               {[
                 { icon: LayoutDashboard, label: "Dashboard", active: true },
@@ -216,7 +216,7 @@ export default function LandingPage() {
         <div className="rounded-xl border border-border bg-card p-12 flex flex-col items-center text-center">
           <h2 className="text-3xl font-bold tracking-tight mb-4">Ready to ship your portfolio?</h2>
           <p className="text-muted-foreground mb-8 max-w-md">
-            Join thousands of developers and designers who use Portfoilo to present their best work.
+            Join thousands of developers and designers who use Melmar's Portfolio Maker to present their best work.
           </p>
           <Link href="/signup">
             <Btn variant="primary" size="lg">
@@ -233,10 +233,10 @@ export default function LandingPage() {
             <div className="w-5 h-5 rounded bg-primary flex items-center justify-center">
               <Layers size={11} className="text-white" />
             </div>
-            <span className="text-sm font-semibold">Portfoilo Maker</span>
+            <span className="text-sm font-semibold">Melmar's Portfolio Maker</span>
           </div>
           <div className="text-center">
-            <p className="text-xs text-muted-foreground">© 2026 Portfoilo Maker. All rights reserved.</p>
+            <p className="text-xs text-muted-foreground">© 2026 Melmar's Portfolio Maker. All rights reserved.</p>
           </div>
           <div className="flex items-center justify-center md:justify-end gap-6">
             <Link href="/privacy" className="text-xs text-muted-foreground hover:text-foreground transition-colors">Privacy</Link>
