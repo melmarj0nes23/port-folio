@@ -391,7 +391,16 @@ export function CreativeTemplate({ portfolio, profile, setProfile, projects, set
                       </div>
                     </div>
                     <div className="shrink-0 flex gap-4 text-sm font-black uppercase tracking-widest text-zinc-500">
-                      {p.tech_stack?.slice(0,3).join(' • ')}
+                      <EditableField
+                        value={p.tech_stack?.join(', ') || ''}
+                        onChange={(val: string) => {
+                          const newP = [...projects]; newP[i].tech_stack = val.split(',').map(s=>s.trim()).filter(Boolean); setProjects?.(newP);
+                        }}
+                        isEditor={isEditor}
+                        renderDisplay={
+                          <>{p.tech_stack?.slice(0,3).join(' • ')}</>
+                        }
+                      />
                     </div>
                   </div>
                 </div>

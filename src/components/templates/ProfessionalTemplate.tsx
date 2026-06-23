@@ -179,11 +179,22 @@ export function ProfessionalTemplate({ portfolio, profile, setProfile, projects,
                     <div className="grid md:grid-cols-2 gap-12 items-center">
                       <div>
                         <div className="flex flex-wrap gap-2 mb-6">
-                          {p.tech_stack?.slice(0,3).map((t: string, j: number) => (
-                            <span key={j} className="px-3 py-1 bg-slate-100 text-slate-600 text-sm font-semibold rounded-full">
-                              {t}
-                            </span>
-                          ))}
+                          <EditableField
+                            value={p.tech_stack?.join(', ') || ''}
+                            onChange={(val: string) => {
+                              const newP = [...projects]; newP[i].tech_stack = val.split(',').map(s=>s.trim()).filter(Boolean); setProjects?.(newP);
+                            }}
+                            isEditor={isEditor}
+                            renderDisplay={
+                              <>
+                                {p.tech_stack?.slice(0,3).map((t: string, j: number) => (
+                                  <span key={j} className="px-3 py-1 bg-slate-100 text-slate-600 text-sm font-semibold rounded-full">
+                                    {t}
+                                  </span>
+                                ))}
+                              </>
+                            }
+                          />
                         </div>
                         <h3 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">
                           <EditableField value={p.title || 'Project Title'} onChange={(val: string) => {

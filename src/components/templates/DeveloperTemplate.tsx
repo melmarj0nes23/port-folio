@@ -366,11 +366,22 @@ export function DeveloperTemplate({ portfolio, profile, setProfile, projects, se
                       </div>
                       
                       <div className="flex flex-wrap gap-2 mt-auto">
-                        {p.tech_stack?.map((t: string, j: number) => (
-                          <span key={j} className="px-2.5 py-1 text-[11px] font-mono text-zinc-300 bg-zinc-950 border border-zinc-800 rounded-md">
-                            {t}
-                          </span>
-                        ))}
+                        <EditableField
+                          value={p.tech_stack?.join(', ') || ''}
+                          onChange={(val: string) => {
+                            const newP = [...projects]; newP[i].tech_stack = val.split(',').map(s=>s.trim()).filter(Boolean); setProjects?.(newP);
+                          }}
+                          isEditor={isEditor}
+                          renderDisplay={
+                            <>
+                              {p.tech_stack?.map((t: string, j: number) => (
+                                <span key={j} className="px-2.5 py-1 text-[11px] font-mono text-zinc-300 bg-zinc-950 border border-zinc-800 rounded-md">
+                                  {t}
+                                </span>
+                              ))}
+                            </>
+                          }
+                        />
                       </div>
                     </div>
                     {/* Subtle Glow Effect */}
