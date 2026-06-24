@@ -54,6 +54,13 @@ export function TemplatesClient({ isLoggedIn }: { isLoggedIn: boolean }) {
       bg: "bg-stone-100 dark:bg-stone-900",
       accent: "#78716c",
     },
+    {
+      name: "Social",
+      desc: "A familiar, feed-based layout inspired by social media profiles.",
+      category: "Creative",
+      bg: "bg-[#F0F2F5] dark:bg-zinc-950",
+      accent: "#1877F2",
+    },
   ];
 
   const handleCreate = async () => {

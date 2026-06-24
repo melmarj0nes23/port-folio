@@ -57,6 +57,7 @@ export async function createPortfolioWithTemplate(templateName: string) {
     case 'creative': templateId = 3; break;
     case 'professional': templateId = 4; break;
     case 'executive': templateId = 5; break;
+    case 'social': templateId = 6; break;
   }
 
   const { data, error } = await supabase

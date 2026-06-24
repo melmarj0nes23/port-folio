@@ -12,8 +12,8 @@ export default function LandingPage() {
       desc: "Edit your portfolio in a structured form and see changes rendered in real-time beside your inputs.",
     },
     {
-      title: "5 professional templates",
-      desc: "Choose from carefully designed templates — Minimal, Developer, Creative, Professional, and Executive.",
+      title: "6 professional templates",
+      desc: "Choose from carefully designed templates — Minimal, Developer, Creative, Professional, Executive, and Social.",
     },
     {
       title: "One-click publishing",
@@ -39,6 +39,7 @@ export default function LandingPage() {
     { name: "Creative", desc: "Bold asymmetric grid", color: "bg-violet-50 dark:bg-violet-950" },
     { name: "Professional", desc: "Classic structured resume", color: "bg-blue-50 dark:bg-blue-950" },
     { name: "Executive", desc: "Premium board-level biography", color: "bg-emerald-50 dark:bg-emerald-950" },
+    { name: "Social", desc: "Engaging creator profile", color: "bg-pink-50 dark:bg-pink-950" },
   ];
 
   return (
@@ -194,13 +195,13 @@ export default function LandingPage() {
         <div className="flex items-end justify-between mb-10">
           <div>
             <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground mb-3">Templates</p>
-            <h2 className="text-3xl font-bold tracking-tight">Five distinct starting points</h2>
+            <h2 className="text-3xl font-bold tracking-tight">Six distinct starting points</h2>
           </div>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {templates.map((t, i) => (
             <Link href="/templates" key={i} className="group cursor-pointer">
-              <div className="rounded-lg border border-border h-40 mb-3 relative overflow-hidden group-hover:border-primary/30 transition-colors bg-background">
+              <div className="rounded-xl border border-border h-72 mb-4 relative overflow-hidden group-hover:border-primary/30 transition-colors bg-background shadow-sm">
                 <div className="absolute inset-0 w-[400%] h-[400%] origin-top-left scale-[0.25] pointer-events-none select-none">
                   <TemplatePreview templateName={t.name} />
                 </div>

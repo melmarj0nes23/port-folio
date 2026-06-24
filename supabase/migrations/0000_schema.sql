@@ -23,7 +23,7 @@ create policy "Users can update their own profile." on users_profile for update 
 create table if not exists portfolios (
   id uuid default gen_random_uuid() primary key,
   user_id uuid references auth.users(id) on delete cascade not null,
-  template_id integer default 1 check (template_id >= 1 and template_id <= 5),
+  template_id integer default 1 check (template_id >= 1 and template_id <= 6),
   theme_color text default '#030213',
   font text default 'Inter',
   is_published boolean default false,
