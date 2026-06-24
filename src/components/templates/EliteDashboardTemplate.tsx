@@ -26,7 +26,7 @@ export function EliteDashboardTemplate({ portfolio, profile, setProfile, project
       if (existing) {
         return prev.map(b => b.type === type ? { ...b, content: { ...b.content, [key]: value } } : b)
       } else {
-        return [...prev, { id: Date.now().toString(), type, content: { [key]: value }, order_index: prev.length }]
+        return [...prev, { id: crypto.randomUUID(), type, content: { [key]: value }, order_index: prev.length }]
       }
     })
   }
@@ -90,7 +90,7 @@ export function EliteDashboardTemplate({ portfolio, profile, setProfile, project
   const addExperience = () => {
     if (setExperience) {
       setExperience([...(experience || []), {
-        id: Date.now(),
+        id: crypto.randomUUID(),
         role: 'Senior Software Engineer',
         company: 'Tech Solutions Inc.',
         start_date: '2023',
@@ -110,7 +110,7 @@ export function EliteDashboardTemplate({ portfolio, profile, setProfile, project
   const addProject = () => {
     if (setProjects) {
       setProjects([...(projects || []), {
-        id: Date.now(),
+        id: crypto.randomUUID(),
         title: 'E-commerce Platform Architecture',
         description: 'A fully scalable microservices architecture for a modern e-commerce platform.',
         tech_stack: ['Next.js', 'Kubernetes', 'PostgreSQL'],

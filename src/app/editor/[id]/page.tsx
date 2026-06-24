@@ -82,21 +82,20 @@ export default async function EditorPage({ params }: { params: { id: string } })
     
     blocks = fetchedBlocks || []
 
-    // Auto-create default blocks if none exist
-    if (blocks.length === 0) {
+    const requiredTypes = ['hero', 'about', 'skills', 'education', 'experience', 'projects', 'certifications', 'contact', 'quickFacts', 'media', 'footer'];
+    const existingTypes = blocks.map((b: any) => b.type);
+    const missingTypes = requiredTypes.filter(t => !existingTypes.includes(t));
+
+    if (missingTypes.length > 0) {
       const pageId = pages[0].id;
-      const defaultBlocks = [
-        { page_id: pageId, type: 'hero', order_index: 0, content: {} },
-        { page_id: pageId, type: 'about', order_index: 1, content: {} },
-        { page_id: pageId, type: 'skills', order_index: 2, content: {} },
-        { page_id: pageId, type: 'education', order_index: 3, content: {} },
-        { page_id: pageId, type: 'experience', order_index: 4, content: {} },
-        { page_id: pageId, type: 'projects', order_index: 5, content: {} },
-        { page_id: pageId, type: 'certifications', order_index: 6, content: {} },
-        { page_id: pageId, type: 'contact', order_index: 7, content: {} }
-      ];
-      const { data: newBlocks } = await supabase.from('blocks').insert(defaultBlocks).select();
-      if (newBlocks) blocks = newBlocks;
+      const newBlocksToInsert = missingTypes.map((type, idx) => ({
+        page_id: pageId,
+        type,
+        order_index: blocks.length + idx,
+        content: {}
+      }));
+      const { data: newBlocks } = await supabase.from('blocks').insert(newBlocksToInsert).select();
+      if (newBlocks) blocks = [...blocks, ...newBlocks];
     }
   }
 

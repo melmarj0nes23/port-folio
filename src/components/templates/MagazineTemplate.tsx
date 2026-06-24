@@ -49,7 +49,7 @@ export function MagazineTemplate({ portfolio, profile, setProfile, projects, set
   const addExperience = () => {
     if (!isEditor) return
     setExperience([...experience, {
-      id: `temp-${Date.now()}`,
+      id: crypto.randomUUID(),
       portfolio_id: portfolio?.id,
       company: 'New Company',
       role: 'New Role',
@@ -69,7 +69,7 @@ export function MagazineTemplate({ portfolio, profile, setProfile, projects, set
   const addProject = () => {
     if (!isEditor) return
     setProjects([...projects, {
-      id: `temp-${Date.now()}`,
+      id: crypto.randomUUID(),
       portfolio_id: portfolio?.id,
       title: 'New Project',
       description: 'Describe the project and your role.',

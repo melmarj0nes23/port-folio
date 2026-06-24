@@ -35,7 +35,7 @@ export function SocialTemplate({ portfolio, profile, setProfile, projects, setPr
   const addProject = () => {
     if(!isEditor || !setProjects) return;
     setProjects([...projects, {
-      id: `temp-${Date.now()}`,
+      id: crypto.randomUUID(),
       title: 'New Project',
       description: 'Describe what you built...',
       tech_stack: ['React'],
@@ -54,7 +54,7 @@ export function SocialTemplate({ portfolio, profile, setProfile, projects, setPr
   const addExperience = () => {
     if(!isEditor || !setExperience) return;
     setExperience([...experience, {
-      id: `temp-${Date.now()}`,
+      id: crypto.randomUUID(),
       role: 'New Role',
       company: 'Company Name',
       start_date: '2023',
