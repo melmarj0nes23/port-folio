@@ -147,7 +147,7 @@ export function SocialTemplate({ portfolio, profile, setProfile, projects, setPr
         </div>
 
         {/* Profile Info Container */}
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="relative mb-4 sm:mb-6 flex flex-col sm:flex-row items-center sm:items-end sm:justify-between gap-4 sm:gap-6">
             
             {/* Avatar */}
@@ -211,7 +211,7 @@ export function SocialTemplate({ portfolio, profile, setProfile, projects, setPr
 
         {/* Sticky Nav */}
         <div className="sticky top-0 z-30 bg-white/80 dark:bg-zinc-900/80 backdrop-blur-md border-t border-slate-200 dark:border-zinc-800 overflow-x-auto no-scrollbar">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <nav className="flex items-center gap-1 sm:gap-2">
               {navItems.map((item) => (
                 <button
@@ -233,7 +233,7 @@ export function SocialTemplate({ portfolio, profile, setProfile, projects, setPr
       </div>
 
       {/* Main Content Feed */}
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 mt-8 sm:mt-12 flex flex-col gap-8 sm:gap-12">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 mt-8 sm:mt-12 flex flex-col gap-8 sm:gap-12">
         
         {/* ABOUT */}
         <section id="about" className="scroll-mt-24">
