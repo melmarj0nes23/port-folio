@@ -6,6 +6,7 @@ import { CreativeTemplate } from '@/components/templates/CreativeTemplate'
 import { ProfessionalTemplate } from '@/components/templates/ProfessionalTemplate'
 import { ExecutiveTemplate } from '@/components/templates/ExecutiveTemplate'
 import { SocialTemplate } from '@/components/templates/SocialTemplate'
+import { MagazineTemplate } from '@/components/templates/MagazineTemplate'
 
 export function TemplatePreview({ templateName }: { templateName: string }) {
   const dummyProfile = { full_name: 'Alex Chen', headline: 'Senior Product Designer', bio: 'I design products used by millions of people. Currently focused on payments infrastructure and developer tools.', skills: ['UI/UX', 'Prototyping', 'Design Systems'] }
@@ -20,6 +21,7 @@ export function TemplatePreview({ templateName }: { templateName: string }) {
     case 'Professional': return <ProfessionalTemplate {...props} isPreview={true} />
     case 'Executive': return <ExecutiveTemplate {...props} isPreview={true} />
     case 'Social': return <SocialTemplate {...props} isPreview={true} />
+    case 'Magazine': return <MagazineTemplate {...props} isPreview={true} />
     default: return null
   }
 }

@@ -61,6 +61,13 @@ export function TemplatesClient({ isLoggedIn }: { isLoggedIn: boolean }) {
       bg: "bg-[#F0F2F5] dark:bg-zinc-950",
       accent: "#1877F2",
     },
+    {
+      name: "Magazine",
+      desc: "A premium editorial layout focusing on storytelling and visual hierarchy.",
+      category: "Creative",
+      bg: "bg-[#fafafa] dark:bg-zinc-950",
+      accent: "#000000",
+    },
   ];
 
   const handleCreate = async () => {

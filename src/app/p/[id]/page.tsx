@@ -6,6 +6,7 @@ import { CreativeTemplate } from '@/components/templates/CreativeTemplate'
 import { ProfessionalTemplate } from '@/components/templates/ProfessionalTemplate'
 import { ExecutiveTemplate } from '@/components/templates/ExecutiveTemplate'
 import { SocialTemplate } from '@/components/templates/SocialTemplate'
+import { MagazineTemplate } from '@/components/templates/MagazineTemplate'
 import type { Metadata } from 'next'
 
 export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
@@ -137,6 +138,8 @@ export default async function PublicPortfolioPage({ params }: { params: { id: st
       return <ExecutiveTemplate {...props} />
     case 6:
       return <SocialTemplate {...props} />
+    case 7:
+      return <MagazineTemplate {...props} />
     default:
       return <MinimalTemplate {...props} />
   }
