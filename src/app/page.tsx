@@ -13,7 +13,7 @@ export default function LandingPage() {
     },
     {
       title: "7 professional templates",
-      desc: "Choose from carefully designed templates — Minimal, Developer, Creative, Professional, Executive, Social, and Magazine.",
+      desc: "Choose from carefully designed templates — Minimal, Developer, Creative, Professional, Executive, Social, Magazine, and Elite Dashboard.",
     },
     {
       title: "One-click publishing",
@@ -41,6 +41,7 @@ export default function LandingPage() {
     { name: "Executive", desc: "Premium board-level biography", color: "bg-emerald-50 dark:bg-emerald-950" },
     { name: "Social", desc: "Engaging creator profile", color: "bg-pink-50 dark:bg-pink-950" },
     { name: "Magazine", desc: "Premium editorial layout", color: "bg-stone-50 dark:bg-stone-950" },
+    { name: "Elite Dashboard", desc: "Modern workspace layout", color: "bg-slate-50 dark:bg-slate-950" },
   ];
 
   return (

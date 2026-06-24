@@ -68,6 +68,13 @@ export function TemplatesClient({ isLoggedIn }: { isLoggedIn: boolean }) {
       bg: "bg-[#fafafa] dark:bg-zinc-950",
       accent: "#000000",
     },
+    {
+      name: "Elite Dashboard",
+      desc: "A modern, highly organized workspace and productivity dashboard layout.",
+      category: "Business",
+      bg: "bg-slate-50 dark:bg-slate-950",
+      accent: "#3b82f6",
+    },
   ];
 
   const handleCreate = async () => {

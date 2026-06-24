@@ -8,7 +8,10 @@ export function EditorRightPanel({ portfolio, setPortfolio, onClose }: any) {
     { id: 2, name: "Developer" },
     { id: 3, name: "Creative" },
     { id: 4, name: "Professional" },
-    { id: 5, name: "Executive" }
+    { id: 5, name: "Executive" },
+    { id: 6, name: "Social" },
+    { id: 7, name: "Magazine" },
+    { id: 8, name: "Elite Dashboard" }
   ];
   const fonts = ["Inter", "DM Sans", "Geist", "Manrope"];
 

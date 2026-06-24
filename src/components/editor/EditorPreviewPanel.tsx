@@ -7,6 +7,7 @@ import { ProfessionalTemplate } from '../templates/ProfessionalTemplate'
 import { ExecutiveTemplate } from '../templates/ExecutiveTemplate'
 import { SocialTemplate } from '../templates/SocialTemplate'
 import { MagazineTemplate } from '../templates/MagazineTemplate'
+import { EliteDashboardTemplate } from '../templates/EliteDashboardTemplate'
 
 export function EditorPreviewPanel({ portfolio, profile, setProfile, projects, setProjects, experience, setExperience, galleries, setGalleries, blocks, setBlocks }: any) {
   const props = { portfolio, profile, setProfile, projects, setProjects, experience, setExperience, galleries, setGalleries, blocks, setBlocks, isEditor: true };
@@ -26,6 +27,8 @@ export function EditorPreviewPanel({ portfolio, profile, setProfile, projects, s
       return <SocialTemplate {...props} />;
     case 7:
       return <MagazineTemplate {...props} />;
+    case 8:
+      return <EliteDashboardTemplate {...props} />;
     default:
       return <MinimalTemplate {...props} />;
   }
