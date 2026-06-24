@@ -82,7 +82,7 @@ export default async function EditorPage({ params }: { params: { id: string } })
     
     blocks = fetchedBlocks || []
 
-    const requiredTypes = ['hero', 'about', 'skills', 'education', 'experience', 'projects', 'certifications', 'contact', 'quickFacts', 'media', 'footer'];
+    const requiredTypes = ['hero', 'about', 'skills', 'education', 'experience', 'projects', 'certifications', 'contact', 'quickFacts', 'media', 'footer', 'quote', 'technologies', 'social'];
     const existingTypes = blocks.map((b: any) => b.type);
     const missingTypes = requiredTypes.filter(t => !existingTypes.includes(t));
 

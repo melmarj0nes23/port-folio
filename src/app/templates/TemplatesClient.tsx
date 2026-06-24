@@ -75,6 +75,13 @@ export function TemplatesClient({ isLoggedIn }: { isLoggedIn: boolean }) {
       bg: "bg-slate-50 dark:bg-slate-950",
       accent: "#3b82f6",
     },
+    {
+      name: "Bento Showcase",
+      desc: "A stunning modular bento grid layout inspired by modern design systems.",
+      category: "Creative",
+      bg: "bg-neutral-100 dark:bg-neutral-900",
+      accent: "#171717",
+    },
   ];
 
   const handleCreate = async () => {

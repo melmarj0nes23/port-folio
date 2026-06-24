@@ -4,7 +4,7 @@ export default function DemoPage() {
   const mockPortfolio = {
     id: 'demo-portfolio',
     user_id: 'demo-user',
-    template_id: 8, // Elite Dashboard
+    template_id: 9, // Bento Showcase
     is_published: false,
     slug: 'demo-mode',
     created_at: new Date().toISOString(),

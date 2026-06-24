@@ -12,8 +12,8 @@ export default function LandingPage() {
       desc: "Edit your portfolio in a structured form and see changes rendered in real-time beside your inputs.",
     },
     {
-      title: "7 professional templates",
-      desc: "Choose from carefully designed templates — Minimal, Developer, Creative, Professional, Executive, Social, Magazine, and Elite Dashboard.",
+      title: "9 professional templates",
+      desc: "Choose from carefully designed templates — Minimal, Developer, Creative, Professional, Executive, Social, Magazine, Elite Dashboard, and Bento Showcase.",
     },
     {
       title: "One-click publishing",
@@ -38,10 +38,11 @@ export default function LandingPage() {
     { name: "Developer", desc: "Monospace accents, project-first", color: "bg-zinc-100 dark:bg-zinc-800" },
     { name: "Creative", desc: "Bold asymmetric grid", color: "bg-violet-50 dark:bg-violet-950" },
     { name: "Professional", desc: "Classic structured resume", color: "bg-blue-50 dark:bg-blue-950" },
-    { name: "Executive", desc: "Premium board-level biography", color: "bg-emerald-50 dark:bg-emerald-950" },
-    { name: "Social", desc: "Engaging creator profile", color: "bg-pink-50 dark:bg-pink-950" },
-    { name: "Magazine", desc: "Premium editorial layout", color: "bg-stone-50 dark:bg-stone-950" },
+    { name: "Executive", desc: "For founders & leaders", color: "bg-stone-100 dark:bg-stone-900" },
+    { name: "Social", desc: "Familiar feed layout", color: "bg-pink-50 dark:bg-pink-950" },
+    { name: "Magazine", desc: "Premium editorial style", color: "bg-[#fafafa] dark:bg-zinc-950" },
     { name: "Elite Dashboard", desc: "Modern workspace layout", color: "bg-slate-50 dark:bg-slate-950" },
+    { name: "Bento Showcase", desc: "Modular grid design", color: "bg-neutral-100 dark:bg-neutral-900" },
   ];
 
   return (

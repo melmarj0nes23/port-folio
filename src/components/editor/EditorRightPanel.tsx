@@ -11,7 +11,8 @@ export function EditorRightPanel({ portfolio, setPortfolio, onClose }: any) {
     { id: 5, name: "Executive" },
     { id: 6, name: "Social" },
     { id: 7, name: "Magazine" },
-    { id: 8, name: "Elite Dashboard" }
+    { id: 8, name: "Elite Dashboard" },
+    { id: 9, name: "Bento Showcase" },
   ];
   const fonts = ["Inter", "DM Sans", "Geist", "Manrope"];
 
