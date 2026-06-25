@@ -183,7 +183,7 @@ export function TemplatesClient({ isLoggedIn }: { isLoggedIn: boolean }) {
             )}
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {templates.map((t) => (
               <div
                 key={t.name}
@@ -192,7 +192,7 @@ export function TemplatesClient({ isLoggedIn }: { isLoggedIn: boolean }) {
                 }`}
               >
                 {/* Template preview card */}
-                <div className="h-48 rounded-t-[10px] relative overflow-hidden bg-background border-b border-border pointer-events-none">
+                <div className="h-64 rounded-t-[10px] relative overflow-hidden bg-background border-b border-border pointer-events-none">
                   <div className="absolute inset-0 w-[400%] h-[400%] origin-top-left scale-[0.25] pointer-events-none select-none">
                     <TemplatePreview template={t.name} profile={null} />
                   </div>
