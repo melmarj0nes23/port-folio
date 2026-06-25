@@ -6,9 +6,8 @@ import { signout } from '@/app/login/actions'
 export function Sidebar({ active }: { active: string }) {
   const items = [
     { icon: LayoutDashboard, label: "Dashboard", href: "/dashboard" },
-    { icon: FileText, label: "Portfolios", href: "/dashboard" },
     { icon: Layers, label: "Templates", href: "/templates" },
-    { icon: Settings, label: "Settings", href: "/dashboard" },
+    { icon: Settings, label: "Settings", href: "/settings" },
   ];
   
   return (

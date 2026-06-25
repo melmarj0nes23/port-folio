@@ -74,6 +74,8 @@ export function BentoShowcaseTemplate({ portfolio, profile, setProfile, projects
     </div>
   )
 
+  const CtaTag = isPreview ? 'div' : 'a' as any;
+
   return (
     <div className="min-h-screen bg-neutral-100 dark:bg-neutral-950 text-neutral-900 dark:text-neutral-100 py-12 md:py-20 px-4 sm:px-6 lg:px-8" style={{ fontFamily: fontFam }}>
       <div className="max-w-7xl mx-auto">
@@ -100,13 +102,13 @@ export function BentoShowcaseTemplate({ portfolio, profile, setProfile, projects
                 </div>
               </div>
               <div className="flex flex-wrap items-center gap-4 mt-4">
-                <a href="#contact" className="px-6 py-3 rounded-full text-white font-medium transition-opacity hover:opacity-90 flex items-center gap-2" style={{ backgroundColor: themeColor }}>
+                <CtaTag href="#contact" className="px-6 py-3 rounded-full text-white font-medium transition-opacity hover:opacity-90 flex items-center gap-2" style={{ backgroundColor: themeColor }}>
                   <EditableField value={heroContent?.cta1 || "Let's Talk"} onChange={(val: string) => updateBlockContent('hero', 'cta1', val)} isEditor={isEditor} />
                   <ArrowRight className="w-4 h-4" />
-                </a>
-                <a href="#projects" className="px-6 py-3 rounded-full bg-neutral-200 dark:bg-neutral-800 text-neutral-900 dark:text-white font-medium transition-colors hover:bg-neutral-300 dark:hover:bg-neutral-700">
+                </CtaTag>
+                <CtaTag href="#projects" className="px-6 py-3 rounded-full bg-neutral-200 dark:bg-neutral-800 text-neutral-900 dark:text-white font-medium transition-colors hover:bg-neutral-300 dark:hover:bg-neutral-700">
                   <EditableField value={heroContent?.cta2 || "View Work"} onChange={(val: string) => updateBlockContent('hero', 'cta2', val)} isEditor={isEditor} />
-                </a>
+                </CtaTag>
               </div>
             </div>
           </Card>
@@ -133,7 +135,7 @@ export function BentoShowcaseTemplate({ portfolio, profile, setProfile, projects
                 { key: 'stat3', label: 'Clients', value: '25+' },
                 { key: 'stat4', label: 'Awards', value: '3' }
               ].map((stat, idx) => (
-                <div key={idx} className="flex flex-col justify-end bg-neutral-50 dark:bg-neutral-800/50 p-4 rounded-2xl">
+                <div key={stat.key || idx} className="flex flex-col justify-end bg-neutral-50 dark:bg-neutral-800/50 p-4 rounded-2xl">
                   <span className="text-3xl font-bold tracking-tighter" style={{ color: themeColor }}>
                     <EditableField value={quickFactsContent?.[stat.key + '_val'] || stat.value} onChange={(val: string) => updateBlockContent('quickFacts', stat.key + '_val', val)} isEditor={isEditor} />
                   </span>
@@ -172,7 +174,7 @@ export function BentoShowcaseTemplate({ portfolio, profile, setProfile, projects
                  { icon: <AtSign className="w-5 h-5" />, key: 'twitter', label: 'Twitter', link: 'https://twitter.com' },
                  { icon: <Mail className="w-5 h-5" />, key: 'email', label: 'Email', link: 'mailto:hello@example.com' }
                ].map((item, idx) => (
-                 <div key={idx} className="flex items-center gap-4 p-3 rounded-2xl hover:bg-neutral-50 dark:hover:bg-neutral-800 transition-colors group">
+                 <div key={item.key || idx} className="flex items-center gap-4 p-3 rounded-2xl hover:bg-neutral-50 dark:hover:bg-neutral-800 transition-colors group">
                     <div className="text-neutral-400 group-hover:text-neutral-900 dark:group-hover:text-white transition-colors">
                       {item.icon}
                     </div>
@@ -182,9 +184,9 @@ export function BentoShowcaseTemplate({ portfolio, profile, setProfile, projects
                     {isEditor ? (
                        <EditableField value={socialContent?.[item.key] || item.link} onChange={(val: string) => updateBlockContent('social', item.key, val)} isEditor={isEditor} />
                     ) : (
-                       <a href={socialContent?.[item.key] || item.link} target="_blank" rel="noopener noreferrer" className="opacity-0 group-hover:opacity-100 transition-opacity">
+                       <CtaTag href={socialContent?.[item.key] || item.link} target="_blank" rel="noopener noreferrer" className="opacity-0 group-hover:opacity-100 transition-opacity">
                          <ExternalLink className="w-4 h-4 text-neutral-400" />
-                       </a>
+                       </CtaTag>
                     )}
                  </div>
                ))}
@@ -244,7 +246,7 @@ export function BentoShowcaseTemplate({ portfolio, profile, setProfile, projects
                   { id: '2', title: 'E-commerce Platform', description: 'High-conversion storefront with seamless cart management and filtering.', tech_stack: ['Next.js', 'Stripe', 'Zustand'], link: '#' },
                   { id: '3', title: 'Financial Tech App', description: 'Mobile-first banking experience with real-time transaction updates.', tech_stack: ['React Native', 'TypeScript', 'Node.js'], link: '#' }
                 ]).map((proj: any, idx: number) => (
-                  <div key={proj.id} className="group flex flex-col gap-4">
+                  <div key={proj.id || idx} className="group flex flex-col gap-4">
                     <div className="aspect-video w-full rounded-2xl overflow-hidden bg-neutral-100 dark:bg-neutral-800 relative">
                        <EditableImage
                          src={proj.image_url || `https://images.unsplash.com/photo-${1551288049 + idx * 100}-cc599ad51b5c?auto=format&fit=crop&q=80&w=800&h=450`}
@@ -308,7 +310,7 @@ export function BentoShowcaseTemplate({ portfolio, profile, setProfile, projects
                   { id: '1', role: 'Lead Product Designer', company: 'InnovateTech', start_date: '2021', end_date: 'Present', description: 'Spearheaded the design system overhaul and led a team of 4 designers.' },
                   { id: '2', role: 'UX/UI Designer', company: 'Creative Solutions', start_date: '2018', end_date: '2021', description: 'Designed end-to-end flows for mobile and web applications.' }
                 ]).map((exp: any, idx: number) => (
-                  <div key={exp.id} className="relative group">
+                  <div key={exp.id || idx} className="relative group">
                     <div className="flex flex-col sm:flex-row sm:items-baseline justify-between mb-1">
                       <h4 className="text-lg font-bold">
                         <EditableField value={exp.role} onChange={(val: string) => { const newE = [...experience]; newE[idx].role = val; setExperience?.(newE); }} isEditor={isEditor} />

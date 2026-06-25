@@ -149,3 +149,19 @@ export async function deletePortfolio(portfolioId: string) {
 
   revalidatePath('/dashboard')
 }
+
+export async function updatePortfolioName(portfolioId: string, name: string) {
+  const supabase = await createClient()
+  
+  const { error } = await supabase
+    .from('portfolios')
+    .update({ name })
+    .eq('id', portfolioId)
+    
+  if (error) {
+    console.error('Error updating name:', error)
+    throw new Error('Could not update portfolio name')
+  }
+  
+  revalidatePath('/dashboard')
+}

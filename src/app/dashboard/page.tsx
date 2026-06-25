@@ -6,6 +6,7 @@ import { createPortfolio, togglePublishStatus } from './actions'
 import { Sidebar } from '@/components/ui/original/Sidebar'
 import { Btn } from '@/components/ui/original/Btn'
 import { Badge } from '@/components/ui/original/Badge'
+import { PortfolioNameEditor } from '@/components/dashboard/PortfolioNameEditor'
 
 export default async function DashboardPage() {
   const supabase = await createClient()
@@ -44,9 +45,6 @@ export default async function DashboardPage() {
             <h1 className="text-sm font-semibold">My Portfolios</h1>
           </div>
           <div className="flex items-center gap-2">
-            <Link href={`/${profile?.username}`} target="_blank" className="flex items-center gap-1.5 text-xs text-muted-foreground hover:text-foreground transition-colors">
-              <Globe size={13} /> View public profile
-            </Link>
             <Link href="/templates" className="inline-flex items-center justify-center gap-2 font-medium transition-all duration-150 cursor-pointer select-none bg-primary text-primary-foreground md:hover:opacity-90 active:scale-[0.98] px-3 py-1.5 text-sm rounded-[6px]">
               <Plus size={13} /> New portfolio
             </Link>
@@ -78,7 +76,7 @@ export default async function DashboardPage() {
             <table className="w-full text-sm">
               <thead>
                 <tr className="border-b border-border bg-muted/50">
-                  <th className="text-left px-4 py-2.5 text-xs text-muted-foreground font-medium">Template ID</th>
+                  <th className="text-left px-4 py-2.5 text-xs text-muted-foreground font-medium">Portfolio Name</th>
                   <th className="text-left px-4 py-2.5 text-xs text-muted-foreground font-medium">Status</th>
                   <th className="text-left px-4 py-2.5 text-xs text-muted-foreground font-medium">Views</th>
                   <th className="text-left px-4 py-2.5 text-xs text-muted-foreground font-medium">Updated</th>
@@ -97,7 +95,7 @@ export default async function DashboardPage() {
                     <tr key={p.id} className="border-b border-border last:border-0 hover:bg-muted/30 transition-colors group">
                       <td className="px-4 py-3">
                         <div>
-                          <p className="font-medium text-foreground">Template {p.template_id}</p>
+                          <PortfolioNameEditor portfolioId={p.id} initialName={p.name} />
                         </div>
                       </td>
                       <td className="px-4 py-3">
