@@ -82,13 +82,13 @@ export default async function SettingsPage() {
               <div className="space-y-4">
                 <p className="text-sm font-medium">Support the Project</p>
                 <div className="bg-amber-50 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-900/50 rounded-lg p-5">
-                  <div className="flex items-start gap-3">
+                  <div className="flex flex-col sm:flex-row items-start gap-4">
                     <div className="p-2 bg-amber-100 dark:bg-amber-900/50 text-amber-600 dark:text-amber-400 rounded-md">
                       <Coffee size={20} />
                     </div>
                     <div>
-                      <p className="text-sm font-medium text-amber-900 dark:text-amber-300">Buy me a coffee</p>
-                      <p className="text-xs text-amber-700 dark:text-amber-400/80 mt-1 mb-3 leading-relaxed">
+                      <p className="text-sm font-medium text-foreground">Buy me a coffee</p>
+                      <p className="text-xs text-muted-foreground mt-1 mb-3 leading-relaxed">
                         This project is completely free! If you find it useful, consider supporting its development.
                       </p>
                       <div className="inline-flex items-center gap-2 bg-background border border-amber-200 dark:border-amber-900/50 rounded-md px-3 py-1.5">

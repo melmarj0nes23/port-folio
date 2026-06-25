@@ -82,6 +82,13 @@ export function TemplatesClient({ isLoggedIn }: { isLoggedIn: boolean }) {
       bg: "bg-neutral-100 dark:bg-neutral-900",
       accent: "#171717",
     },
+    {
+      name: "Interactive",
+      desc: "A chronological timeline telling the story of your professional journey.",
+      category: "Creative",
+      bg: "bg-blue-50 dark:bg-blue-950",
+      accent: "#3b82f6",
+    },
   ];
 
   const handleCreate = async () => {
@@ -118,7 +125,7 @@ export function TemplatesClient({ isLoggedIn }: { isLoggedIn: boolean }) {
             </div>
           </div>
           <div className="flex-1 overflow-auto bg-muted">
-            <TemplatePreview templateName={previewTemplate} />
+            <TemplatePreview template={previewTemplate} profile={null} />
           </div>
         </div>
       )}
@@ -187,7 +194,7 @@ export function TemplatesClient({ isLoggedIn }: { isLoggedIn: boolean }) {
                 {/* Template preview card */}
                 <div className="h-48 rounded-t-[10px] relative overflow-hidden bg-background border-b border-border pointer-events-none">
                   <div className="absolute inset-0 w-[400%] h-[400%] origin-top-left scale-[0.25] pointer-events-none select-none">
-                    <TemplatePreview templateName={t.name} />
+                    <TemplatePreview template={t.name} profile={null} />
                   </div>
                   {/* Subtle overlay to prevent interaction and add a bit of polish */}
                   <div className="absolute inset-0 bg-transparent md:hover:bg-black/5 transition-colors duration-300"></div>

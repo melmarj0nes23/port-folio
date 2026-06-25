@@ -9,6 +9,7 @@ import { SocialTemplate } from '@/components/templates/SocialTemplate'
 import { MagazineTemplate } from '@/components/templates/MagazineTemplate'
 import { EliteDashboardTemplate } from '@/components/templates/EliteDashboardTemplate'
 import { BentoShowcaseTemplate } from '@/components/templates/BentoShowcaseTemplate'
+import { InteractiveTemplate } from '@/components/templates/InteractiveTemplate'
 import type { Metadata } from 'next'
 
 export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
@@ -143,6 +144,7 @@ export default async function PublicPortfolioPage({ params }: { params: { id: st
     case 7: return <MagazineTemplate {...props} />
     case 8: return <EliteDashboardTemplate {...props} />
     case 9: return <BentoShowcaseTemplate {...props} />
+    case 10: return <InteractiveTemplate {...props} />
     default:
       return <MinimalTemplate {...props} />
   }

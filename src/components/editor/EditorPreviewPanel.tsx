@@ -9,6 +9,7 @@ import { SocialTemplate } from '../templates/SocialTemplate'
 import { MagazineTemplate } from '../templates/MagazineTemplate'
 import { EliteDashboardTemplate } from '../templates/EliteDashboardTemplate'
 import { BentoShowcaseTemplate } from '../templates/BentoShowcaseTemplate'
+import { InteractiveTemplate } from '../templates/InteractiveTemplate'
 
 export function EditorPreviewPanel({ portfolio, profile, setProfile, projects, setProjects, experience, setExperience, galleries, setGalleries, blocks, setBlocks }: any) {
   const props = { portfolio, profile, setProfile, projects, setProjects, experience, setExperience, galleries, setGalleries, blocks, setBlocks, isEditor: true };
@@ -32,6 +33,8 @@ export function EditorPreviewPanel({ portfolio, profile, setProfile, projects, s
       return <EliteDashboardTemplate {...props} />;
     case 9:
       return <BentoShowcaseTemplate {...props} />;
+    case 10:
+      return <InteractiveTemplate {...props} />;
     default:
       return <MinimalTemplate {...props} />;
   }

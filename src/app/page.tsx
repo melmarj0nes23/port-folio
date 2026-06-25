@@ -13,7 +13,7 @@ export default function LandingPage() {
     },
     {
       title: "9 professional templates",
-      desc: "Choose from carefully designed templates — Minimal, Developer, Creative, Professional, Executive, Social, Magazine, Elite Dashboard, and Bento Showcase.",
+      desc: "Choose from carefully designed templates — Minimal, Developer, Creative, Professional, Executive, Social, Magazine, Elite Dashboard, Bento Showcase, and Interactive.",
     },
     {
       title: "One-click publishing",
@@ -43,6 +43,7 @@ export default function LandingPage() {
     { name: "Magazine", desc: "Premium editorial style", color: "bg-[#fafafa] dark:bg-zinc-950" },
     { name: "Elite Dashboard", desc: "Modern workspace layout", color: "bg-slate-50 dark:bg-slate-950" },
     { name: "Bento Showcase", desc: "Modular grid design", color: "bg-neutral-100 dark:bg-neutral-900" },
+    { name: "Interactive", desc: "Chronological storytelling", color: "bg-blue-50 dark:bg-blue-950" },
   ];
 
   return (
@@ -203,16 +204,18 @@ export default function LandingPage() {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {templates.map((t, i) => (
-            <Link href="/templates" key={i} className="group cursor-pointer">
+            <div key={i} className="group cursor-pointer relative">
               <div className="rounded-xl border border-border h-72 mb-4 relative overflow-hidden group-hover:border-primary/30 transition-colors bg-background shadow-sm">
                 <div className="absolute inset-0 w-[400%] h-[400%] origin-top-left scale-[0.25] pointer-events-none select-none">
-                  <TemplatePreview templateName={t.name} />
+                  <TemplatePreview template={t.name} profile={null} />
                 </div>
                 <div className="absolute inset-0 bg-transparent hover:bg-black/5 transition-colors duration-300"></div>
               </div>
-              <p className="text-sm font-medium">{t.name}</p>
-              <p className="text-xs text-muted-foreground mt-0.5">{t.desc}</p>
-            </Link>
+              <h3 className="font-semibold">{t.name}</h3>
+              <p className="text-sm text-muted-foreground">{t.desc}</p>
+              
+              <Link href="/templates" className="absolute inset-0 z-10" aria-label={`View ${t.name} template`} />
+            </div>
           ))}
         </div>
       </section>

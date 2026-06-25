@@ -9,14 +9,23 @@ import { SocialTemplate } from '@/components/templates/SocialTemplate'
 import { MagazineTemplate } from '@/components/templates/MagazineTemplate'
 import { EliteDashboardTemplate } from '@/components/templates/EliteDashboardTemplate'
 import { BentoShowcaseTemplate } from '@/components/templates/BentoShowcaseTemplate'
+import { InteractiveTemplate } from '@/components/templates/InteractiveTemplate'
 
-export function TemplatePreview({ templateName }: { templateName: string }) {
-  const dummyProfile = { full_name: 'Alex Chen', headline: 'Senior Product Designer', bio: 'I design products used by millions of people. Currently focused on payments infrastructure and developer tools.', skills: ['UI/UX', 'Prototyping', 'Design Systems'] }
+export function TemplatePreview({ template, profile, isPreview = false }: { template: string, profile: any, isPreview?: boolean }) {
   const dummyProjects = [{ title: 'Payments Dashboard', description: 'Redesigned the core payments flow.', tech_stack: ['React', 'Figma'] }]
-  const dummyExperience = [{ role: 'Senior Designer', company: 'Stripe', start_date: '2021', end_date: 'Present', description: 'Leading design for merchant products.' }]
-  const props = { profile: dummyProfile, projects: dummyProjects, experience: dummyExperience, portfolio: {} }
+  const dummyExp = [{ role: 'Senior Designer', company: 'Tech Corp', start_date: '2020', end_date: 'Present' }]
+  
+  const props = {
+    profile: profile || { full_name: 'Alex Chen', headline: 'Product Designer & Engineer', about: 'Building digital experiences.', username: 'alex' },
+    portfolio: { theme_color: '#3b82f6', font: 'Inter' },
+    projects: dummyProjects,
+    experience: dummyExp,
+    blocks: [],
+    isEditor: false,
+    isPreview
+  }
 
-  switch (templateName) {
+  switch (template) {
     case 'Minimal': return <MinimalTemplate {...props} isPreview={true} />
     case 'Developer': return <DeveloperTemplate {...props} isPreview={true} />
     case 'Creative': return <CreativeTemplate {...props} isPreview={true} />
@@ -26,6 +35,7 @@ export function TemplatePreview({ templateName }: { templateName: string }) {
     case 'Magazine': return <MagazineTemplate {...props} isPreview={true} />
     case 'Elite Dashboard': return <EliteDashboardTemplate {...props} isPreview={true} />
     case 'Bento Showcase': return <BentoShowcaseTemplate {...props} isPreview={true} />
-    default: return null
+    case 'Interactive': return <InteractiveTemplate {...props} isPreview={true} />
+    default: return <MinimalTemplate {...props} isPreview={true} />
   }
 }

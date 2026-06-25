@@ -61,6 +61,7 @@ export async function createPortfolioWithTemplate(templateName: string) {
     case 'magazine': templateId = 7; break;
     case 'elite dashboard': templateId = 8; break;
     case 'bento showcase': templateId = 9; break;
+    case 'interactive': templateId = 10; break;
   }
 
   const { data, error } = await supabase
