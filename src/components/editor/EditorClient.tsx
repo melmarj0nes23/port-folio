@@ -113,7 +113,7 @@ export default function EditorClient({
         </div>
         <div className="flex items-center gap-2 md:gap-4">
           <div className="flex items-center gap-1">
-            <span className="text-xs text-muted-foreground whitespace-nowrap hidden md:inline-block">https://my-4polio.vercel.app/p/</span>
+            <span className="text-xs text-muted-foreground whitespace-nowrap hidden md:inline-block">https://my-4folio.vercel.app/p/</span>
             <input 
               type="text" 
               value={portfolio.slug || ''} 
@@ -144,7 +144,7 @@ export default function EditorClient({
             </div>
             <div className="flex-1 flex justify-center">
               <div className="h-5 px-3 rounded bg-muted text-xs flex items-center text-muted-foreground truncate max-w-full">
-                my-4polio.vercel.app/p/{portfolio?.slug || portfolio?.id || ''}
+                my-4folio.vercel.app/p/{portfolio?.slug || portfolio?.id || ''}
               </div>
             </div>
           </div>
